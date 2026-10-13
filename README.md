@@ -5,10 +5,6 @@
 <h3 align="center">CBE-STUDIO</h3>
 
 <p align="center">
-  <em>Roblox experience developer &amp; data tools</em>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/-Roblox%20Studio-000000?style=for-the-badge&logo=roblox&logoColor=white" alt="Roblox Studio" />
   <img src="https://img.shields.io/badge/-Luau-2C2F72?style=for-the-badge&logo=lua&logoColor=white" alt="Luau" />
   <img src="https://img.shields.io/badge/-Open%20Cloud-FC2947?style=for-the-badge" alt="Open Cloud" />
