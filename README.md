@@ -59,14 +59,6 @@
 
 ---
 
-## DataStore Migration Guide
-
-Step-by-step walkthrough to move all your players' saved data to your new game &mdash; **Windows &amp; macOS, with copy-paste commands**:
-
-[![Migration Guide](https://img.shields.io/badge/-Migration%20Guide-1f6feb?style=for-the-badge&logo=readthedocs&logoColor=white)](https://cbe-studio.github.io/CBE-STUDIO/guide.html)
-
----
-
 ## Contact
 
 Questions or feedback? Send me a message:
