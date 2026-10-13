@@ -253,6 +253,59 @@
     <div class="note warn" style="margin-top:16px"><b>Important for macOS:</b> Mac uses the command <code class="inline">python3</code> instead of <code class="inline">python</code>. Every command below shows both versions &mdash; use the one for your computer.</div>
   </section>
 
+  <!-- ALL COMMANDS CHEAT SHEET -->
+  <section class="card">
+    <h3>All terminal commands &mdash; copy &amp; paste in order</h3>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;line-height:1.6;margin-bottom:6px">This is the whole terminal part on one card. Click <b>Copy</b> on any line, paste it into your terminal, press <b>Enter</b>. Do them in order &mdash; the steps are explained in full further down.</p>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">1 &mdash; Check Python is installed</p>
+    <span class="os-label win">Windows</span>
+    <pre>python --version</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 --version</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">2 &mdash; Check Git is installed (both systems)</p>
+    <pre>git --version</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">3 &mdash; Download the toolkit (both systems)</p>
+    <pre>git clone https://github.com/CBE-STUDIO/roblox-datastore-migration.git</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">4 &mdash; Go into the folder (both systems)</p>
+    <pre>cd roblox-datastore-migration</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">5 &mdash; Make your config file</p>
+    <span class="os-label win">Windows</span>
+    <pre>copy scripts\config.example.py scripts\config.py</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>cp scripts/config.example.py scripts/config.py</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">6 &mdash; Back up the old game (read-only)</p>
+    <span class="os-label win">Windows</span>
+    <pre>python scripts\old_backup.py</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/old_backup.py</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">7 &mdash; Retry anything that failed</p>
+    <span class="os-label win">Windows</span>
+    <pre>python scripts\retry_errors.py</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/retry_errors.py</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">8 &mdash; Build the migration plan</p>
+    <span class="os-label win">Windows</span>
+    <pre>python scripts\build_ops.py</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/build_ops.py</pre>
+
+    <p style="color:var(--muted);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px">9 &mdash; Migrate (write to the new game)</p>
+    <span class="os-label win">Windows</span>
+    <pre>python scripts\migrate_oc.py</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/migrate_oc.py</pre>
+
+    <div class="note info" style="margin-top:18px">Between commands 5 and 6, don't forget to <b>edit <code class="inline">config.py</code></b> with your own IDs and DataStore names (step 7 below) &mdash; that's the only part done in a text editor, not the terminal.</div>
+  </section>
+
   <!-- GLOSSARY -->
   <section class="card">
     <h3>First, 5 words you must know</h3>
