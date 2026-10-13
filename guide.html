@@ -66,7 +66,6 @@
 
   .wrap { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
 
-  /* header */
   header { text-align: center; margin-bottom: 30px; animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
   .logo { width: 170px; filter: drop-shadow(0 6px 24px rgba(59, 130, 246, 0.22)); }
   h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 14px; }
@@ -78,7 +77,6 @@
   .tagline { color: var(--muted); font-weight: 300; margin-top: 10px; font-size: 1.05rem; }
   .tagline b { color: var(--text); font-weight: 500; }
 
-  /* cards */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -96,55 +94,35 @@
 
   .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; }
 
-  /* jump nav */
   .jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
   .jump a {
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: #b7bfcf;
-    background: var(--card-solid);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 6px 13px;
-    transition: all 0.2s;
-    font-weight: 400;
+    font-size: 0.8rem; text-decoration: none; color: #b7bfcf;
+    background: var(--card-solid); border: 1px solid var(--border);
+    border-radius: 20px; padding: 6px 13px; transition: all 0.2s; font-weight: 400;
   }
   .jump a:hover { border-color: var(--accent); color: #fff; transform: translateY(-1px); }
 
-  /* direct-link buttons */
   .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
   a.linkbtn {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #dbe8ff;
-    background: rgba(59, 130, 246, 0.10);
-    border: 1px solid rgba(59, 130, 246, 0.4);
-    border-radius: 10px;
-    padding: 9px 15px;
-    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 0.88rem; font-weight: 500; text-decoration: none;
+    color: #dbe8ff; background: rgba(59, 130, 246, 0.10);
+    border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 10px;
+    padding: 9px 15px; transition: all 0.2s;
   }
   a.linkbtn:hover {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(30, 79, 214, 0.25);
+    background: rgba(59, 130, 246, 0.2); border-color: var(--accent);
+    transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30, 79, 214, 0.25);
   }
   a.linkbtn::after { content: "\2197"; font-size: 0.8rem; opacity: 0.7; }
   a.linkbtn.internal::after { content: "\2192"; }
 
-  /* step */
   .step .num {
-    width: 40px; height: 40px;
-    border-radius: 12px;
+    width: 40px; height: 40px; border-radius: 12px;
     background: linear-gradient(120deg, var(--blue), var(--accent));
     color: #fff; font-weight: 700; font-size: 1.15rem;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 8px 22px rgba(30, 79, 214, 0.4);
-    flex-shrink: 0;
+    box-shadow: 0 8px 22px rgba(30, 79, 214, 0.4); flex-shrink: 0;
   }
   .step-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
   .step-head h2 { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; padding-top: 4px; }
@@ -158,49 +136,75 @@
   .step a.inl { color: var(--accent2); text-decoration: none; font-weight: 500; }
   .step a.inl:hover { text-decoration: underline; }
 
-  /* code */
+  /* code block with copy button */
   pre {
+    position: relative;
     background: var(--code-bg);
     border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: 12px;
-    padding: 14px 18px;
-    margin: 12px 0 4px;
+    padding: 15px 76px 15px 18px;
+    margin: 10px 0 4px;
     overflow-x: auto;
     font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
     font-size: 0.88rem;
     color: #c9d6f0;
     line-height: 1.65;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
   pre .c { color: #565e70; }
   pre .k { color: #60a5fa; }
   pre .s { color: #7dd3a8; }
   pre .y { color: #f2c879; }
+
+  .copy-btn {
+    position: absolute;
+    top: 9px; right: 9px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #cfe0ff;
+    background: rgba(59, 130, 246, 0.14);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 8px;
+    padding: 5px 11px;
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .copy-btn:hover { background: rgba(59, 130, 246, 0.28); border-color: var(--accent); }
+  .copy-btn.copied { background: rgba(52, 211, 153, 0.18); border-color: rgba(52, 211, 153, 0.6); color: #b9f5d8; }
+
+  /* OS labels */
+  .os-label {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 3px 11px; border-radius: 20px;
+    margin: 12px 0 0;
+  }
+  .os-label.win { background: rgba(59, 130, 246, 0.15); color: #9cc2ff; border: 1px solid rgba(59, 130, 246, 0.4); }
+  .os-label.mac { background: rgba(180, 190, 210, 0.12); color: #d5ddea; border: 1px solid rgba(180, 190, 210, 0.32); }
+
   code.inline {
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1px 7px;
+    background: var(--code-bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1px 7px;
     font-family: 'Cascadia Code', Consolas, monospace;
-    font-size: 0.85rem;
-    color: #9cc2ff;
+    font-size: 0.85rem; color: #9cc2ff;
   }
 
-  /* notes */
   .note { border-radius: 12px; padding: 14px 16px; font-size: 0.92rem; font-weight: 300; line-height: 1.6; margin-top: 14px; }
   .note.info { background: rgba(59, 130, 246, 0.09); border: 1px solid rgba(59, 130, 246, 0.35); color: #bcd6ff; }
   .note.warn { background: rgba(251, 191, 36, 0.08); border: 1px solid rgba(251, 191, 36, 0.35); color: #ffe3a1; }
   .note.ok   { background: rgba(52, 211, 153, 0.08); border: 1px solid rgba(52, 211, 153, 0.35);  color: #b9f5d8; }
   .note b { font-weight: 600; color: #fff; }
 
-  /* glossary table */
   table { width: 100%; border-collapse: collapse; margin-top: 8px; }
   th, td { text-align: left; padding: 9px 10px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
   th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.1em; }
   td { color: #b7bfcf; font-weight: 300; }
   td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
 
-  /* safety grid */
   .safe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 8px; }
   .safe-item { background: var(--card-solid); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; font-size: 0.88rem; color: #b7bfcf; font-weight: 300; line-height: 1.55; }
   .safe-item b { color: var(--ok); display: block; margin-bottom: 4px; font-size: 0.95rem; }
@@ -223,7 +227,7 @@
   <header>
     <img class="logo" src="https://raw.githubusercontent.com/CBE-STUDIO/CBE-STUDIO/main/assets/cbe-studio-logo.png" alt="CBE Studio logo">
     <h1>DataStore Migration <em>Guide</em></h1>
-    <p class="tagline">Move ALL your players' saved data from your old game to your new game &mdash; <b>explained for complete beginners, in the right order</b>.</p>
+    <p class="tagline">Move ALL your players' saved data from your old game to your new game &mdash; <b>step by step, Windows &amp; macOS, with copy-paste commands</b>.</p>
   </header>
 
   <!-- QUICK LINKS -->
@@ -235,9 +239,18 @@
       <a class="linkbtn" href="https://create.roblox.com/dashboard/creations" target="_blank" rel="noopener">Roblox Creations (Universe IDs)</a>
       <a class="linkbtn" href="https://create.roblox.com/dashboard/credentials" target="_blank" rel="noopener">Roblox API Key page</a>
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/tree/main/docs" target="_blank" rel="noopener">Full docs folder</a>
-      <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration" target="_blank" rel="noopener">Toolkit repo</a>
     </div>
-    <div class="note info" style="margin-top:16px">Tip: this page is one long checklist. Just go down step by step &mdash; 1, 2, 3... &mdash; and don't skip. Each step tells you exactly where to click.</div>
+    <div class="note info" style="margin-top:16px">This page is one long checklist &mdash; just go down step by step. Every command has a <b>Copy</b> button: click it, paste into your terminal, press Enter.</div>
+  </section>
+
+  <!-- TERMINAL BASICS -->
+  <section class="card">
+    <h3>How to open your terminal (you'll use this a lot)</h3>
+    <span class="os-label win">Windows</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px">Press the <b>Windows key</b>, type <b>cmd</b>, and press <b>Enter</b> &mdash; the black "Command Prompt" window opens.</p>
+    <span class="os-label mac">macOS</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px">Press <b>Command (⌘) + Space</b>, type <b>Terminal</b>, and press <b>Enter</b>.</p>
+    <div class="note warn" style="margin-top:16px"><b>Important for macOS:</b> Mac uses the command <code class="inline">python3</code> instead of <code class="inline">python</code>. Every command below shows both versions &mdash; use the one for your computer.</div>
   </section>
 
   <!-- GLOSSARY -->
@@ -260,11 +273,10 @@
       <div class="num">1</div>
       <h2><span>Before you start</span>What you need</h2>
     </div>
-    <p>Gather these four things. Everything here is free.</p>
     <ol>
-      <li>Your <b>old game</b> (the one full of player data) and your <b>new game</b> (the empty one).</li>
-      <li>A computer with <b>Windows</b> (the commands in this guide are for Windows).</li>
-      <li><b>Python 3</b> installed &mdash; don't worry, step 5 shows you how. <a class="inl" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Get it here</a>.</li>
+      <li>Your <b>old game</b> (full of player data) and your <b>new game</b> (the empty one).</li>
+      <li>A computer &mdash; <b>Windows or macOS</b> both work.</li>
+      <li><b>Python 3</b> installed &mdash; step 5 shows you how. <a class="inl" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Get it here</a>.</li>
       <li>An <b>Open Cloud API key</b> &mdash; step 4 shows you how. <a class="inl" href="https://create.roblox.com/dashboard/credentials" target="_blank" rel="noopener">Open the key page</a>.</li>
     </ol>
     <div class="note info">Allow about <b>20 minutes</b>. Most of the time is waiting for the backup step to download your data.</div>
@@ -277,18 +289,17 @@
       <h2><span>Find your games' IDs</span>Universe ID &amp; Place ID</h2>
     </div>
     <p>You need <b>four numbers total</b>: old universe, old place, new universe, new place.</p>
-    <p><b>Open this page:</b></p>
     <div class="links" style="margin-top:8px">
       <a class="linkbtn" href="https://create.roblox.com/dashboard/creations" target="_blank" rel="noopener">create.roblox.com &rarr; Creations</a>
     </div>
     <ol>
       <li>Find your <b>old game</b> in the list and click it.</li>
       <li>Click the <b>&hellip;</b> (three dots) menu &rarr; choose <b>Copy Universe ID</b>.</li>
-      <li>Paste it into Notepad and label it <code class="inline">OLD UNIVERSE</code>.</li>
+      <li>Paste it into Notepad / TextEdit and label it <code class="inline">OLD UNIVERSE</code>.</li>
       <li>For the <b>Place ID</b>: open your game's public page. The URL looks like <code class="inline">roblox.com/games/123456789/My-Game</code>. The <code class="inline">123456789</code> is the Place ID. Save it as <code class="inline">OLD PLACE</code>.</li>
-      <li>Now do exactly the same for your <b>new game</b> &rarr; save <code class="inline">NEW UNIVERSE</code> and <code class="inline">NEW PLACE</code>.</li>
+      <li>Now do the same for your <b>new game</b> &rarr; save <code class="inline">NEW UNIVERSE</code> and <code class="inline">NEW PLACE</code>.</li>
     </ol>
-    <div class="note info">You'll paste these four numbers into <code class="inline">config.py</code> in step 7. Keep the Notepad file open.</div>
+    <div class="note info">You'll paste these four numbers into <code class="inline">config.py</code> in step 7. Keep the note open.</div>
   </section>
 
   <!-- STEP 3 -->
@@ -297,7 +308,6 @@
       <div class="num">3</div>
       <h2><span>Look at your game</span>Find your DataStore names</h2>
     </div>
-    <p>A DataStore name is the word your game uses to open a save folder. You find them in your own game code.</p>
     <p><b>Open your old game in Roblox Studio</b>, then:</p>
     <ol>
       <li>Press <b>Ctrl + Shift + F</b> (search across all scripts).</li>
@@ -305,10 +315,10 @@
       <li>Every result looks like this &mdash; the text in quotes is a name you need:</li>
     </ol>
     <pre><span class="k">local</span> store = DataStoreService:<span class="k">GetDataStore</span>(<span class="s">"TimeStats"</span>)</pre>
-    <p>Write each name into your Notepad list. Real examples look like:</p>
+    <p>Write each name down. Real examples look like:</p>
     <pre><span class="s">"ProfileStore V1"</span>, <span class="s">"TimeStats"</span>, <span class="s">"Donation"</span>, <span class="s">"PlayerData_v1_79229339887184"</span></pre>
-    <div class="note warn"><b>Some names end with your old place ID</b> (like the last example). That's normal &mdash; the toolkit automatically swaps that ending to your new place ID. Just copy the name exactly as it is.</div>
-    <div class="note info">No Studio yet? Install it first: <a class="inl" href="https://create.roblox.com/docs/studio/setup" target="_blank" rel="noopener">Roblox Studio setup guide</a>.</div>
+    <div class="note warn"><b>Some names end with your old place ID</b> (like the last example). That's normal &mdash; the toolkit automatically swaps that ending to your new place ID. Just copy the name exactly.</div>
+    <div class="note info">No Studio yet? <a class="inl" href="https://create.roblox.com/docs/studio/setup" target="_blank" rel="noopener">Roblox Studio setup guide</a>.</div>
   </section>
 
   <!-- STEP 4 -->
@@ -317,21 +327,23 @@
       <div class="num">4</div>
       <h2><span>The secret password</span>Create your Open Cloud API key</h2>
     </div>
-    <p>This key lets the toolkit read your old game and write to your new game. It must have access to <b>both</b>.</p>
     <div class="links" style="margin-top:8px">
       <a class="linkbtn" href="https://create.roblox.com/dashboard/credentials" target="_blank" rel="noopener">Open the Credentials page</a>
     </div>
     <ol>
       <li>Click <b>Create API Key</b>.</li>
-      <li>Give it any name, e.g. <code class="inline">migration</code>.</li>
+      <li>Give it a name, e.g. <code class="inline">migration</code>.</li>
       <li>Under <b>Access Permissions</b>, add <b>both</b> experiences: your old game AND your new game.</li>
       <li>Under <b>Permissions</b>, enable the <b>DataStore</b> read and write options.</li>
-      <li>Click <b>Save &amp; Generate Key</b>, then <b>copy</b> the key (long string of letters and numbers).</li>
-      <li>Open <b>Notepad</b>, paste the key on a single line, and save it as:
-        <pre>C:\Users\You\Downloads\roblox key data.txt</pre>
-      (change <code class="inline">You</code> to your Windows username &mdash; use the exact real path, you'll need it in step 7).</li>
+      <li>Click <b>Save &amp; Generate Key</b>, then <b>copy</b> the key.</li>
+      <li>Open a text editor, paste the key on a single line, and save it somewhere easy:</li>
     </ol>
-    <div class="note warn"><b>NEVER share this key.</b> Not in Discord, not in a GitHub file, not in a screenshot. It's the password to your game's data. The toolkit reads it from this text file &mdash; that's the safe way.</div>
+    <span class="os-label win">Windows</span>
+    <pre>C:\Users\You\Downloads\roblox key data.txt</pre>
+    <span class="os-label mac">macOS</span>
+    <pre>/Users/You/Downloads/roblox key data.txt</pre>
+    <p style="margin-top:8px">Replace <code class="inline">You</code> with your real computer username &mdash; you'll need this exact path in step 7.</p>
+    <div class="note warn"><b>NEVER share this key.</b> Not in Discord, not in a GitHub file, not in a screenshot. The toolkit reads it from this text file &mdash; that's the safe way.</div>
   </section>
 
   <!-- STEP 5 -->
@@ -344,19 +356,26 @@
       <a class="linkbtn" href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>
     </div>
     <ol>
-      <li>Download the latest <b>Python 3</b> for Windows.</li>
-      <li>Run the installer. On the first screen, <b>tick the box "Add Python to PATH"</b> &mdash; this is important! Then click <b>Install Now</b>.</li>
-      <li>When it's done, test it. Press <b>Windows key</b>, type <b>cmd</b>, press <b>Enter</b> (this opens the terminal), then type:</li>
+      <li>Download the latest <b>Python 3</b> for your system.</li>
+      <li>Run the installer.</li>
     </ol>
+    <span class="os-label win">Windows</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px">On the first screen, <b>tick "Add Python to PATH"</b>, then click <b>Install Now</b>. This checkbox is important!</p>
+    <span class="os-label mac">macOS</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px">Just open the downloaded <b>.pkg</b> and click Continue/Install. macOS usually has Python already &mdash; the installer makes sure it's up to date.</p>
+    <p style="margin-top:12px">Now open your terminal and check it installed. Click the <b>Copy</b> button, paste, press Enter:</p>
+    <span class="os-label win">Windows</span>
     <pre>python --version</pre>
-    <div class="note ok">If it prints something like <code class="inline">Python 3.12.4</code>, you're ready. If it says "not recognized", re-run the installer and make sure "Add to PATH" is ticked.</div>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 --version</pre>
+    <div class="note ok">If it prints something like <code class="inline">Python 3.12.4</code>, you're ready. On Windows, if it says "not recognized", re-run the installer and tick "Add to PATH".</div>
   </section>
 
   <!-- STEP 6 -->
   <section class="card step">
     <div class="step-head">
       <div class="num">6</div>
-      <h2><span>Get the files</span>Download the toolkit</h2>
+      <h2><span>Get the files</span>Download &amp; extract the toolkit</h2>
     </div>
     <div class="links" style="margin-top:8px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/archive/refs/heads/main.zip" target="_blank" rel="noopener">Direct ZIP download</a>
@@ -364,12 +383,18 @@
     </div>
     <ol>
       <li>Click <b>Direct ZIP download</b> above (or on the repo: green <b>Code</b> button &rarr; <b>Download ZIP</b>).</li>
-      <li><b>Right-click</b> the downloaded ZIP &rarr; <b>Extract All&hellip;</b></li>
-      <li>Choose a simple place like <code class="inline">C:\Users\You\roblox-datastore-migration</code>.</li>
-      <li>Now open your terminal (Windows key &rarr; type <b>cmd</b> &rarr; Enter) and go into that folder:</li>
+      <li>Extract it:</li>
     </ol>
+    <span class="os-label win">Windows</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px"><b>Right-click</b> the ZIP &rarr; <b>Extract All&hellip;</b> &rarr; choose a simple place like <code class="inline">C:\Users\You\roblox-datastore-migration</code>.</p>
+    <span class="os-label mac">macOS</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px"><b>Double-click</b> the ZIP &mdash; it extracts automatically into a folder (usually in <b>Downloads</b>).</p>
+    <p style="margin-top:12px">Now open your terminal and go into that folder. Copy your command:</p>
+    <span class="os-label win">Windows</span>
     <pre>cd C:\Users\You\roblox-datastore-migration</pre>
-    <div class="note info">Tip: type <code class="inline">cd </code> (with a space), then drag the folder onto the terminal window &mdash; it fills the path for you.</div>
+    <span class="os-label mac">macOS</span>
+    <pre>cd ~/Downloads/roblox-datastore-migration-main</pre>
+    <div class="note info"><b>Windows tip:</b> type <code class="inline">cd </code> (with a space), then drag the folder onto the terminal window &mdash; it fills the path for you.</div>
   </section>
 
   <!-- STEP 7 -->
@@ -378,9 +403,12 @@
       <div class="num">7</div>
       <h2><span>Your settings</span>Fill in <code class="inline">config.py</code></h2>
     </div>
-    <p>First, make your own copy of the example config. In the terminal, inside the repo folder, run:</p>
+    <p>First make your own copy of the example config. In the terminal (inside the repo folder), pick your OS:</p>
+    <span class="os-label win">Windows</span>
     <pre>copy scripts\config.example.py scripts\config.py</pre>
-    <p>Now open <code class="inline">scripts\config.py</code> in Notepad and change these lines to <b>your</b> values from steps 2, 3 and 4:</p>
+    <span class="os-label mac">macOS</span>
+    <pre>cp scripts/config.example.py scripts/config.py</pre>
+    <p style="margin-top:10px">Now open <code class="inline">scripts/config.py</code> in Notepad (Windows) or TextEdit (macOS) and change these lines to <b>your</b> values from steps 2, 3 and 4:</p>
     <pre><span class="c"># where your key file is (step 4)</span>
 API_KEY_FILE = <span class="s">r"C:\Users\You\Downloads\roblox key data.txt"</span>
 
@@ -396,12 +424,8 @@ STORES = [
     <span class="s">"TimeStats"</span>,
     <span class="s">"Donation"</span>,
 ]</pre>
-    <ol>
-      <li>Replace each number with your real ones.</li>
-      <li>Replace the <code class="inline">STORES</code> list with your own DataStore names (keep the quotes and commas).</li>
-      <li>Save the file.</li>
-    </ol>
-    <div class="note warn">Compare with the original <a class="inl" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/scripts/config.example.py" target="_blank" rel="noopener">config.example.py</a> if you get stuck. And remember: never upload <code class="inline">config.py</code> anywhere &mdash; it has your paths.</div>
+    <div class="note warn"><b>macOS users:</b> write the key path without the <code class="inline">r</code> and with forward slashes, e.g. <code class="inline">"/Users/You/Downloads/roblox key data.txt"</code>.</div>
+    <div class="note info">Compare with the original <a class="inl" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/scripts/config.example.py" target="_blank" rel="noopener">config.example.py</a> if you get stuck. Never upload <code class="inline">config.py</code> anywhere.</div>
   </section>
 
   <!-- STEP 8 -->
@@ -410,10 +434,13 @@ STORES = [
       <div class="num">8</div>
       <h2><span>Run 1 of 4</span>Back up the old game</h2>
     </div>
-    <p>This reads <b>every key</b> from your old game and saves it on your PC. It is <b>read-only</b> &mdash; your old game is never touched or changed.</p>
+    <p>This reads <b>every key</b> from your old game and saves it on your PC. It is <b>read-only</b> &mdash; your old game is never changed.</p>
+    <span class="os-label win">Windows</span>
     <pre>python scripts\old_backup.py</pre>
-    <p>You'll see it working through your DataStores. When it's done, a folder called <code class="inline">old_backup\</code> appears with one file per DataStore &mdash; that's all your players' data, safe on your computer.</p>
-    <div class="note ok"><b>Keep those backup files.</b> They're your parachute &mdash; even if everything else failed, your data is safe.</div>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/old_backup.py</pre>
+    <p style="margin-top:10px">A folder called <code class="inline">old_backup</code> appears with one file per DataStore &mdash; all your players' data, safe on your computer.</p>
+    <div class="note ok"><b>Keep those backup files.</b> They're your parachute.</div>
     <div class="links" style="margin-top:12px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/docs/04-BACKUP-OLD.md" target="_blank" rel="noopener">Step 8 details (docs/04)</a>
     </div>
@@ -425,9 +452,12 @@ STORES = [
       <div class="num">9</div>
       <h2><span>Run 2 of 4</span>Retry anything that failed</h2>
     </div>
-    <p>Sometimes a download fails (internet hiccup, Roblox rate limit). This command finds and re-tries only the failed ones:</p>
+    <p>Sometimes a download fails (internet hiccup, Roblox rate limit). This re-tries only the failed ones:</p>
+    <span class="os-label win">Windows</span>
     <pre>python scripts\retry_errors.py</pre>
-    <p>Run it until it reports nothing left to retry, then continue.</p>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/retry_errors.py</pre>
+    <p style="margin-top:10px">Run it until it says nothing is left to retry, then continue.</p>
     <div class="links" style="margin-top:12px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/docs/09-TROUBLESHOOTING.md" target="_blank" rel="noopener">Problems? (docs/09)</a>
     </div>
@@ -439,15 +469,18 @@ STORES = [
       <div class="num">10</div>
       <h2><span>Run 3 of 4</span>Build the migration plan</h2>
     </div>
-    <p>This reads your backup, rewrites the old place-id endings to your new place id, and works out a <b>safe merge</b> with anything already in the new game:</p>
+    <p>This reads your backup, fixes the place-id endings, and works out a <b>safe merge</b> with anything already in the new game:</p>
+    <span class="os-label win">Windows</span>
     <pre>python scripts\build_ops.py</pre>
-    <ul>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/build_ops.py</pre>
+    <ul style="margin-top:12px">
       <li><b>Numbers</b> (coins, minutes) &rarr; keep the <b>maximum</b> of old and new</li>
       <li><b>Tables</b> &rarr; merged field by field</li>
       <li><b>Lists</b> &rarr; combined, no duplicates</li>
       <li><b>Nothing is ever deleted</b> from the new game</li>
     </ul>
-    <p>Result: <code class="inline">mig\ops.json</code> (the plan). If anything was ambiguous, it's listed in <code class="inline">mig\conflicts.txt</code> for you to read.</p>
+    <p>Result: <code class="inline">mig/ops.json</code>. Anything ambiguous is listed in <code class="inline">mig/conflicts.txt</code> for you to read.</p>
     <div class="links" style="margin-top:12px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/docs/05-BUILD-OPS.md" target="_blank" rel="noopener">Step 10 details (docs/05)</a>
     </div>
@@ -460,9 +493,12 @@ STORES = [
       <h2><span>Run 4 of 4</span>Migrate!</h2>
     </div>
     <p>The big one &mdash; this writes everything into your <b>new</b> game, 10 threads at a time:</p>
+    <span class="os-label win">Windows</span>
     <pre>python scripts\migrate_oc.py</pre>
-    <p>Every successful write is noted in <code class="inline">mig\applied_keys.jsonl</code>. If it crashes or your PC restarts, <b>just run the same command again</b> &mdash; it continues from where it stopped.</p>
-    <div class="note info">Running it twice is safe. Keys that already transferred are skipped automatically.</div>
+    <span class="os-label mac">macOS</span>
+    <pre>python3 scripts/migrate_oc.py</pre>
+    <p style="margin-top:10px">Every write is noted in <code class="inline">mig/applied_keys.jsonl</code>. If it crashes, <b>just run the same command again</b> &mdash; it continues where it stopped.</p>
+    <div class="note info">Running it twice is safe. Keys already transferred are skipped automatically.</div>
     <div class="links" style="margin-top:12px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/docs/06-MIGRATE.md" target="_blank" rel="noopener">Step 11 details (docs/06)</a>
     </div>
@@ -476,9 +512,8 @@ STORES = [
     </div>
     <ol>
       <li>Open your <b>new</b> game in Roblox Studio and play it.</li>
-      <li>Check a few players &mdash; their coins, items and time should all be there.</li>
-      <li>Leaderboards need one extra step (see below).</li>
-      <li>Game passes / VIP: Roblox stores those on their side, not in DataStores &mdash; read the guide below.</li>
+      <li>Check a few players &mdash; coins, items and time should all be there.</li>
+      <li>Leaderboards need one extra step. Game passes/VIP are handled by Roblox itself.</li>
     </ol>
     <div class="links" style="margin-top:12px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/docs/08-VERIFY.md" target="_blank" rel="noopener">Verification checklist (docs/08)</a>
@@ -507,7 +542,7 @@ STORES = [
   <!-- HELP -->
   <section class="card">
     <h3>Stuck somewhere?</h3>
-    <p style="color:#b7bfcf;font-weight:300;font-size:0.97rem;line-height:1.65">There's a full troubleshooting page, and the docs are written in order too. Or just send a message.</p>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.97rem;line-height:1.65">There's a full troubleshooting page, and the docs are written in order too. Or send a message.</p>
     <div class="links" style="margin-top:12px">
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/blob/main/docs/09-TROUBLESHOOTING.md" target="_blank" rel="noopener">Troubleshooting (docs/09)</a>
       <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/tree/main/docs" target="_blank" rel="noopener">All docs</a>
@@ -528,5 +563,48 @@ STORES = [
   </footer>
 
 </div>
+
+<script>
+  // Add a Copy button to every code block
+  document.querySelectorAll('pre').forEach(function (pre) {
+    var text = pre.innerText;
+    var btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.type = 'button';
+    btn.textContent = 'Copy';
+
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 1600);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    });
+
+    pre.appendChild(btn);
+  });
+
+  // Fallback copy for older browsers / file:// pages
+  function fallback(text, done) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+</script>
+
 </body>
 </html>
