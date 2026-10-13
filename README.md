@@ -59,6 +59,14 @@
 
 ---
 
+## Contact
+
+Questions or feedback? Send me a message:
+
+[![Contact me](https://img.shields.io/badge/-Contact%20me-1f6feb?style=for-the-badge&logo=maildotru&logoColor=white)](https://cbe-studio.github.io/CBE-STUDIO/contact.html)
+
+---
+
 <p align="center">
   <img src="assets/cbe-studio-logo.png" width="140" alt="CBE Studio" />
 </p>
