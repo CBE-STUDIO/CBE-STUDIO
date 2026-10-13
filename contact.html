@@ -6,25 +6,25 @@
 <title>Contact &mdash; CBE Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0d13;
-    --card: rgba(255, 255, 255, 0.04);
-    --border: rgba(255, 255, 255, 0.09);
-    --text: #e8ecf4;
-    --muted: #8b93a5;
-    --accent: #8b5cf6;
-    --accent2: #c084fc;
-    --violet-deep: #7c3aed;
-    --violet-glow: #a855f7;
-    --radius: 18px;
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #388bfd;
+    --accent-deep: #1f6feb;
+    --danger: #f85149;
+    --ok: #3fb950;
+    --radius: 12px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -32,151 +32,111 @@
     align-items: center;
     justify-content: center;
     padding: 32px 16px;
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  /* soft ambient glow blobs */
-  body::before, body::after {
-    content: "";
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.35;
-    z-index: 0;
-    pointer-events: none;
-  }
-  body::before {
-    width: 520px; height: 520px;
-    background: radial-gradient(circle, #7c3aed, transparent 70%);
-    top: -160px; left: -120px;
-    animation: drift 16s ease-in-out infinite alternate;
-  }
-  body::after {
-    width: 460px; height: 460px;
-    background: radial-gradient(circle, #a855f7, transparent 70%);
-    bottom: -140px; right: -100px;
-    animation: drift 20s ease-in-out infinite alternate-reverse;
-  }
-
-  @keyframes drift {
-    from { transform: translate(0, 0) scale(1); }
-    to   { transform: translate(40px, 30px) scale(1.15); }
+    -webkit-font-smoothing: antialiased;
   }
 
   .card {
-    position: relative;
-    z-index: 1;
     width: 100%;
-    max-width: 560px;
+    max-width: 540px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 44px 40px 40px;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-    animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    padding: 40px 38px 36px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
   @keyframes rise {
-    from { opacity: 0; transform: translateY(24px); }
+    from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
   .logo {
     display: block;
-    width: 190px;
-    margin: 0 auto 14px;
-    filter: drop-shadow(0 6px 24px rgba(139, 92, 246, 0.35));
+    width: 180px;
+    margin: 0 auto 16px;
   }
 
   h1 {
     text-align: center;
-    font-size: 1.55rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text);
   }
 
   h1 em {
     font-style: normal;
-    background: linear-gradient(120deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent);
   }
 
   .sub {
     text-align: center;
     color: var(--muted);
-    font-size: 0.95rem;
-    margin: 10px 0 32px;
+    font-size: 0.9rem;
     font-weight: 300;
+    margin: 8px 0 30px;
   }
 
-  .field { margin-bottom: 20px; }
+  .field { margin-bottom: 18px; }
 
   label {
     display: block;
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 500;
     color: var(--muted);
-    margin-bottom: 8px;
+    margin-bottom: 7px;
   }
 
   input, textarea {
     width: 100%;
-    background: rgba(255, 255, 255, 0.045);
+    background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 16px;
+    border-radius: 8px;
+    padding: 12px 14px;
     color: var(--text);
     font-family: inherit;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     resize: vertical;
   }
 
-  input::placeholder, textarea::placeholder { color: #565e70; }
+  input::placeholder, textarea::placeholder { color: #565e6b; }
 
   input:focus, textarea:focus {
     border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18);
+    box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.15);
   }
 
   textarea { min-height: 140px; }
 
   button {
     width: 100%;
-    margin-top: 8px;
+    margin-top: 6px;
     border: none;
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 8px;
+    padding: 13px;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    background: linear-gradient(120deg, var(--violet-deep), var(--violet-glow), var(--accent2));
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
-    transition: transform 0.2s, box-shadow 0.25s, filter 0.2s;
+    background: var(--accent-deep);
+    transition: background 0.2s, transform 0.1s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
   }
 
-  button:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(139, 92, 246, 0.5); filter: brightness(1.08); }
-  button:active { transform: translateY(0); }
-  button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+  button:hover { background: var(--accent); }
+  button:active { transform: scale(0.99); }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
 
   .spinner {
-    width: 18px; height: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.35);
+    width: 16px; height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-top-color: #fff;
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
@@ -186,50 +146,47 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* inline status messages */
   .status {
     display: none;
-    margin-top: 18px;
-    padding: 14px 16px;
-    border-radius: 12px;
-    font-size: 0.92rem;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
     text-align: center;
-    animation: fadeIn 0.35s ease both;
+    animation: fadeIn 0.3s ease both;
   }
-  .status.ok    { background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.4);  color: #6ee7b7; }
-  .status.error { background: rgba(255, 77, 94, 0.10);  border: 1px solid rgba(255, 77, 94, 0.45);  color: #ffb3bb; }
+  .status.ok    { background: rgba(63, 185, 80, 0.1);  border: 1px solid rgba(63, 185, 80, 0.4);  color: #56d364; }
+  .status.error { background: rgba(248, 81, 73, 0.1);  border: 1px solid rgba(248, 81, 73, 0.4);  color: #ff7b72; }
 
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
-  /* success panel replaces the form */
   .success {
     display: none;
     text-align: center;
-    padding: 34px 10px;
-    animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    padding: 32px 10px;
+    animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
   .success .check {
-    width: 74px; height: 74px;
-    margin: 0 auto 22px;
+    width: 68px; height: 68px;
+    margin: 0 auto 20px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #34d399, #22c55e);
+    background: var(--ok);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 16px 44px rgba(52, 211, 153, 0.4);
-    animation: pop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.4) both;
+    animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.4) both;
   }
-  .success .check svg { width: 34px; height: 34px; stroke: #fff; stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-  .success h2 { font-size: 1.3rem; margin-bottom: 8px; }
-  .success p  { color: var(--muted); font-size: 0.95rem; font-weight: 300; }
+  .success .check svg { width: 30px; height: 30px; stroke: #0d1117; stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .success h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
+  .success p  { color: var(--muted); font-size: 0.9rem; font-weight: 300; }
   .success a  { color: var(--accent); text-decoration: none; font-weight: 500; }
   .success a:hover { text-decoration: underline; }
 
   @keyframes pop { from { transform: scale(0.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-  form.out { opacity: 0; transform: translateY(-10px); transition: opacity 0.35s, transform 0.35s; pointer-events: none; }
+  form.out { opacity: 0; transform: translateY(-8px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
 
   .footer {
     text-align: center;
-    margin-top: 26px;
+    margin-top: 24px;
     font-size: 0.8rem;
     color: var(--muted);
     font-weight: 300;
@@ -238,8 +195,8 @@
   .footer a:hover { color: var(--text); }
 
   @media (max-width: 480px) {
-    .card { padding: 32px 22px 28px; }
-    h1 { font-size: 1.3rem; }
+    .card { padding: 28px 20px 24px; }
+    h1 { font-size: 1.25rem; }
   }
 </style>
 </head>
@@ -251,19 +208,19 @@
     <img class="logo" src="https://raw.githubusercontent.com/CBE-STUDIO/CBE-STUDIO/main/assets/cbe-studio-logo.png" alt="CBE Studio logo">
 
     <h1>Contact <em>CBE Studio</em></h1>
-    <p class="sub">Have a question, feedback, or a project idea? Send a message &mdash; I'll get back to you.</p>
+    <p class="sub">Questions, feedback or a project idea &mdash; send a message and I'll get back to you.</p>
 
     <!-- Contact form -> Formspree -->
     <form id="contact-form" action="https://formspree.io/f/xyekdqjo" method="POST">
       <input type="hidden" name="_subject" value="New message from your website">
 
       <div class="field">
-        <label for="name">Your name</label>
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Jane Doe" required>
       </div>
 
       <div class="field">
-        <label for="email">Your email</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="_replyto" placeholder="jane@example.com" required>
       </div>
 
@@ -285,7 +242,7 @@
       <div class="check">
         <svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>
       </div>
-      <h2>Message sent!</h2>
+      <h2>Message sent</h2>
       <p>Thanks for reaching out &mdash; I'll reply as soon as I can.</p>
       <p style="margin-top:12px"><a href="#" id="send-another">&larr; Send another message</a></p>
     </div>
@@ -333,7 +290,7 @@
         setTimeout(() => {
           form.style.display = 'none';
           success.style.display = 'block';
-        }, 350);
+        }, 300);
       } else {
         const data = await res.json().catch(() => ({}));
         setStatus('error', data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.');
@@ -352,8 +309,6 @@
     success.style.display = 'none';
     form.style.display = 'block';
     form.reset();
-    // re-trigger the rise animation
-    form.classList.remove('out');
     requestAnimationFrame(() => form.classList.remove('out'));
   });
 </script>
