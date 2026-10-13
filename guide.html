@@ -234,7 +234,7 @@
   <section class="card">
     <h3>Quick links (everything you'll need, in one place)</h3>
     <div class="links">
-      <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/archive/refs/heads/main.zip" target="_blank" rel="noopener">Download the toolkit (ZIP)</a>
+      <a class="linkbtn" href="https://git-scm.com/downloads" target="_blank" rel="noopener">Download Git</a>
       <a class="linkbtn" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Download Python</a>
       <a class="linkbtn" href="https://create.roblox.com/dashboard/creations" target="_blank" rel="noopener">Roblox Creations (Universe IDs)</a>
       <a class="linkbtn" href="https://create.roblox.com/dashboard/credentials" target="_blank" rel="noopener">Roblox API Key page</a>
@@ -375,26 +375,27 @@
   <section class="card step">
     <div class="step-head">
       <div class="num">6</div>
-      <h2><span>Get the files</span>Download &amp; extract the toolkit</h2>
+      <h2><span>Get the files</span>Clone the toolkit with git</h2>
     </div>
-    <div class="links" style="margin-top:8px">
-      <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration/archive/refs/heads/main.zip" target="_blank" rel="noopener">Direct ZIP download</a>
-      <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration" target="_blank" rel="noopener">Or open the repo</a>
+    <p>You'll download the toolkit straight into your terminal with <code class="inline">git clone</code> &mdash; no ZIP needed.</p>
+    <p><b>First, check you have Git.</b> In your terminal, type this (works on both Windows and macOS):</p>
+    <pre>git --version</pre>
+    <div class="note info" style="margin-top:10px">If it prints a version like <code class="inline">git version 2.45.1</code>, you're good. If not, install it first: <a class="inl" href="https://git-scm.com/downloads" target="_blank" rel="noopener">Download Git here</a> (Windows: run the installer and keep the defaults. macOS: it may just work, or install via the link).</div>
+
+    <p style="margin-top:16px"><b>Now clone the toolkit.</b> This one command works on Windows and macOS &mdash; click Copy, paste, Enter:</p>
+    <pre>git clone https://github.com/CBE-STUDIO/roblox-datastore-migration.git</pre>
+    <p style="margin-top:10px">This makes a folder called <code class="inline">roblox-datastore-migration</code> right where your terminal is. Now go into it &mdash; the same command works on both systems:</p>
+    <pre>cd roblox-datastore-migration</pre>
+
+    <span class="os-label win">Windows</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px">The folder will be created inside your user folder (e.g. <code class="inline">C:\Users\You\roblox-datastore-migration</code>).</p>
+    <span class="os-label mac">macOS</span>
+    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px">The folder will be created inside your home folder (e.g. <code class="inline">/Users/You/roblox-datastore-migration</code>).</p>
+
+    <div class="note ok" style="margin-top:14px"><b>That's it</b> &mdash; you now have the toolkit, and you're standing inside its folder in the terminal. Everything from here on runs with the commands in the next steps.</div>
+    <div class="links" style="margin-top:12px">
+      <a class="linkbtn" href="https://github.com/CBE-STUDIO/roblox-datastore-migration" target="_blank" rel="noopener">Toolkit repo</a>
     </div>
-    <ol>
-      <li>Click <b>Direct ZIP download</b> above (or on the repo: green <b>Code</b> button &rarr; <b>Download ZIP</b>).</li>
-      <li>Extract it:</li>
-    </ol>
-    <span class="os-label win">Windows</span>
-    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px"><b>Right-click</b> the ZIP &rarr; <b>Extract All&hellip;</b> &rarr; choose a simple place like <code class="inline">C:\Users\You\roblox-datastore-migration</code>.</p>
-    <span class="os-label mac">macOS</span>
-    <p style="color:#b7bfcf;font-weight:300;font-size:0.95rem;margin-top:8px"><b>Double-click</b> the ZIP &mdash; it extracts automatically into a folder (usually in <b>Downloads</b>).</p>
-    <p style="margin-top:12px">Now open your terminal and go into that folder. Copy your command:</p>
-    <span class="os-label win">Windows</span>
-    <pre>cd C:\Users\You\roblox-datastore-migration</pre>
-    <span class="os-label mac">macOS</span>
-    <pre>cd ~/Downloads/roblox-datastore-migration-main</pre>
-    <div class="note info"><b>Windows tip:</b> type <code class="inline">cd </code> (with a space), then drag the folder onto the terminal window &mdash; it fills the path for you.</div>
   </section>
 
   <!-- STEP 7 -->
